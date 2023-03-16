@@ -21,7 +21,7 @@ public final class FileScribe {
 
     private static List<String> readFile(String fileName) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            return  br.lines().toList();
+            return br.lines().toList();
         }
     }
 

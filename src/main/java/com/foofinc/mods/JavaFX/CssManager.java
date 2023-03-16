@@ -11,6 +11,10 @@ public enum CssManager {
 
     public String getCssUrl() {
         URL cssUrl = getClass().getResource(CssPath);
+        return returnStringOrExit(cssUrl);
+    }
+
+    private static String returnStringOrExit(URL cssUrl) {
         if (cssUrl == null) {
             System.out.println("Resource not found. Aborting application.");
             System.exit(-1);
