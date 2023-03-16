@@ -3,47 +3,39 @@ package com.foofinc.mods.serialization;
 /**
  * Manager of ObjectSerializer
  * 'SerializablePlaceHolder' type should be replaced by the Object to be Serialized that implements the Serializable interface
- * FilePath and FileName must be updates
+ * FilePath and FileName must be updated
  * All are marked with //TODO
- * */
+ *
+ * Handling multiple ObjectSerializer's are possible
+ */
 
 
-public class PersistenceManager {
+public enum SerializationManager {
 
-    private static PersistenceManager INSTANCE = new PersistenceManager();
+    INSTANCE;
 
-    //TODO
+    //TODO *//*
     private final ObjectSerializer<SerializablePlaceHolder> objectSerializer;
-
-    //TODO
     private final String pathToFileFolder = "folderPath";
-    //TODO
     private final String fileName = "fileName";
+    private SerializablePlaceHolder placeHolder;
+    //TODO *//*
 
-
-    private PersistenceManager() {
+    SerializationManager() {
         objectSerializer = new ObjectSerializer<>(pathToFileFolder + fileName);
-    }
 
-    public static PersistenceManager getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new PersistenceManager();
-        }
-        return INSTANCE;
-    }
-
-    //TODO
-    public SerializablePlaceHolder getObject() {
         try {
-            return objectSerializer.load();
+            placeHolder = objectSerializer.load();
         } catch (Exception e) {
-            //TODO
             objectSerializer.save(new SerializablePlaceHolder());
+            placeHolder = objectSerializer.load();
         }
-        return getObject();
     }
 
-    //TODO
+    public SerializablePlaceHolder getObject() {
+        return placeHolder;
+    }
+
     public void saveObject(SerializablePlaceHolder obj) {
         objectSerializer.save(obj);
     }

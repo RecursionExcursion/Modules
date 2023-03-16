@@ -20,13 +20,9 @@ public final class FileScribe {
     }
 
     private static List<String> readFile(String fileName) throws IOException {
-
-        List<String> data;
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            data = br.lines().toList();
+            return  br.lines().toList();
         }
-        return data;
-
     }
 
     public static void writeToFile(String fileName, List<String> data) {

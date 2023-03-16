@@ -16,7 +16,10 @@ public class APICaller {
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-        conn.setRequestProperty("Authorization", "Bearer " + bearer);
+        if (bearer != null) {
+            conn.setRequestProperty("Authorization", "Bearer " + bearer);
+        }
+
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setRequestMethod("GET");
         conn.connect();
@@ -26,11 +29,17 @@ public class APICaller {
         if (respCode != 200) {
             throw new RuntimeException("Http Response Code- " + respCode);
         } else {
-//            StringBuilder sb = new StringBuilder();
-//            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-//            Scanner scanner = new Scanner(br);
-//            while (scanner.hasNext()) sb.append(scanner.nextLine());
-//            return sb.toString();
+            /*
+            TODO Non-stream version
+            StringBuilder sb = new StringBuilder();
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            Scanner scanner = new Scanner(br);
+            while (scanner.hasNext()) {
+                sb.append(scanner.nextLine());
+            }
+            br.close();
+            return sb.toString();
+             */
             return new BufferedReader(new InputStreamReader(conn.getInputStream())).lines()
                                                                                    .collect(Collectors.joining());
         }
