@@ -1,6 +1,7 @@
 package com.foofinc.mods.JavaFX;
 
 import com.example.darknotepad.HelloApplication;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -19,7 +20,7 @@ public class SceneLoader {
         }
     }
 
-    public static void stageCreator(String viewString, int width, int height, Stage stage) {
+    public static void stageChanger(String viewString, int width, int height, Stage stage) {
         try {
             Scene scene = getScene(viewString, width, height);
             setStage(scene, stage);
