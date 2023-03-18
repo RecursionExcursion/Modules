@@ -1,4 +1,4 @@
-package com.foofinc.mods.JavaFX;
+package com.foofinc.mods.JavaFX.scene;
 
 import java.net.URL;
 
