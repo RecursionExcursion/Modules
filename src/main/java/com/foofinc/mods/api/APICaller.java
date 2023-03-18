@@ -1,4 +1,4 @@
-package com.foofinc.mods;
+package com.foofinc.mods.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.foofinc.mods;
+package com.foofinc.mods.io;
 
 import java.io.*;
 import java.util.List;

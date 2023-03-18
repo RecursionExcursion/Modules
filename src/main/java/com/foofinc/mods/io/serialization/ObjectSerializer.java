@@ -1,4 +1,4 @@
-package com.foofinc.mods.serialization;
+package com.foofinc.mods.io.serialization;
 
 import java.io.*;
 
