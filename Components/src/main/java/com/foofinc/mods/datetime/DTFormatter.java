@@ -15,6 +15,7 @@ public class DTFormatter {
      */
     private final static DateTimeFormatter[] DATE_TIME_FORMATTERS = new DateTimeFormatter[]{
             DateTimeFormatter.ofPattern("MMM dd, yyyy"),
+            DateTimeFormatter.ofPattern("MMM d, yyyy"),
             DateTimeFormatter.ofPattern("dd MMM, yyyy")
     };
 
