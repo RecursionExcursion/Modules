@@ -13,14 +13,14 @@ public class ClockLock {
     }
 
     public boolean isLocked(LocalDateTime now) {
-        if(unlockTime != null){
+        if (unlockTime != null) {
             isLocked = now.isBefore(unlockTime);
         }
         return isLocked;
     }
 
-    public void lock(LocalDateTime now) {
-        unlockTime = now.plusMinutes(lockDurationInMinutes);
+    public void lock() {
+        unlockTime = LocalDateTime.now().plusMinutes(lockDurationInMinutes);
         isLocked = true;
     }
 }
