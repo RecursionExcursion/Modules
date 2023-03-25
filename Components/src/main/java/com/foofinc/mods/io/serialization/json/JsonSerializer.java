@@ -1,14 +1,13 @@
-package com.foofinc.mods.io.serialization.json;
+package com.rloup.wog.util;
 
 import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 
 import java.io.File;
 import java.io.IOException;
 
 public class JsonSerializer<T> {
 
-    private final ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper MAPPER = new ObjectMapper();
     private final File filePath;
 
     public JsonSerializer(File filePath) {
@@ -17,16 +16,15 @@ public class JsonSerializer<T> {
 
     public void mapObjectToJson(Object obj) {
         try {
-            mapper.writeValue(filePath, obj);
+            MAPPER.writeValue(filePath, obj);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public T mapJsonToObject() {
+    public T mapJsonToObject(Class<T> tClass) {
         try {
-            return mapper.readValue(filePath, new TypeReference<T>() {
-            });
+            return MAPPER.readValue(filePath, tClass);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
