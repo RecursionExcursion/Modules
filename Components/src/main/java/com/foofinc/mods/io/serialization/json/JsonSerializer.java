@@ -1,4 +1,4 @@
-package com.rloup.wog.util;
+package com.foofinc.mods.io.serialization.json;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
