@@ -9,5 +9,8 @@
         <module name="Components" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FXAppSkeleton" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
