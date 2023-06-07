@@ -19,9 +19,6 @@ class UnZipper {
 
             while (zipEntry != null) {
 
-                //TODO Delete Sout log
-                System.out.println(zipEntry.getName());
-
                 File newFile = newFile(destDir, zipEntry);
 
                 if (zipEntry.isDirectory()) {
@@ -34,8 +31,6 @@ class UnZipper {
                     if (!parent.isDirectory() && !parent.mkdirs()) {
                         throw new IOException("Failed to create directory " + parent);
                     }
-
-                    //TODO buffer extract logic
 
                     // write file content
                     FileOutputStream fos = new FileOutputStream(newFile);
