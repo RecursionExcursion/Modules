@@ -21,7 +21,7 @@ public class FileZipperAPI {
 
     public static void zipSingleFileToDestination(File fileToZip, File destDir) {
 
-        if (filePathExists(fileToZip) && filePathExists(destDir)) {
+        if (filePathExists(fileToZip, destDir)) {
             try {
                 Zipper.zipSingleFile(fileToZip, destDir);
             } catch (IOException e) {
@@ -32,15 +32,7 @@ public class FileZipperAPI {
 
     public static void zipMultipleFilesToDestination(File[] filesToZip, String zipName, File destDir) {
 
-        boolean filesExist = true;
-        for (File file : filesToZip) {
-            if (!filePathExists(file)) {
-                filesExist = false;
-                break;
-            }
-        }
-
-        if (filesExist && filePathExists(destDir)) {
+        if (filePathExists(filesToZip) && filePathExists(destDir)) {
             try {
                 Zipper.zipMultipleFiles(filesToZip, zipName, destDir);
             } catch (IOException e) {
@@ -51,7 +43,7 @@ public class FileZipperAPI {
 
     public static void zipDirectory(File dirToZip, File destDir) {
 
-        if (filePathExists(dirToZip) && filePathExists(destDir)) {
+        if (filePathExists(dirToZip, destDir)) {
             try {
                 Zipper.zipDirectory(dirToZip, destDir);
             } catch (IOException e) {
@@ -60,7 +52,10 @@ public class FileZipperAPI {
         }
     }
 
-    private static boolean filePathExists(File file) {
-        return Files.exists(file.toPath());
+    private static boolean filePathExists(File... files) {
+        for (File file : files) {
+            if (!Files.exists(file.toPath())) return false;
+        }
+        return true;
     }
 }
