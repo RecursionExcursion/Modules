@@ -29,7 +29,8 @@ public class SceneLoader {
 
     private static Scene getScene(String viewString, int width, int height) throws IOException {
         //TODO 'HelloApplication' is the project starting point
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(viewString));
+//        FXMLLoader FXMLLoaderfxmlLoader = new FXMLLoader(HelloApplication.class.getResource(viewString));
+        FXMLLoader fxmlLoader = null;
         Scene scene = new Scene(fxmlLoader.load(), width, height);
 
         //Optional Css Styling
