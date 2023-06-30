@@ -2,7 +2,7 @@ package com.foofinc.mods.io.serialization.binary;
 
 import java.io.*;
 
-public class ObjectBytesConverter<T> {
+public class ObjectBytesConverter<T extends Serializable> {
 
     private final Class<T> tClass;
 
