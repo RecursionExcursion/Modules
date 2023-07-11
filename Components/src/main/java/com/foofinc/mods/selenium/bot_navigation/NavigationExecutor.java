@@ -1,4 +1,4 @@
-package com.foofinc.mods.selenium.nav_ex;
+package com.foofinc.mods.selenium.bot_navigation;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -23,8 +23,9 @@ public class NavigationExecutor {
         return instance;
     }
 
-    public void addTasks(NavigationTask... tasks) {
+    public NavigationExecutor addTasks(NavigationTask... tasks) {
         taskQueue.addAll(Arrays.asList(tasks));
+        return this;
     }
 
 
@@ -35,6 +36,4 @@ public class NavigationExecutor {
             sleepHumanPageNavigation();
         }
     }
-
-
 }

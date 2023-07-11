@@ -1,6 +1,7 @@
-package com.foofinc.mods.selenium.nav_ex;
+package com.foofinc.mods.selenium.bot_navigation.tasks;
 
 import org.openqa.selenium.WebElement;
+import selenium.bot_navigation.NavigationTask;
 
 import java.util.Random;
 
@@ -11,7 +12,7 @@ public class WriteInElementTask extends NavigationTask {
 
     private final String s;
 
-    public WriteInElementTask(WebElement e, String s) {
+     WriteInElementTask(WebElement e, String s) {
         super(e);
         this.s = s;
     }

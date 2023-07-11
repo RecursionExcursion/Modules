@@ -1,4 +1,4 @@
-package com.foofinc.mods.selenium.nav_ex;
+package com.foofinc.mods.selenium.bot_navigation;
 
 import java.util.HashMap;
 import java.util.Map;
