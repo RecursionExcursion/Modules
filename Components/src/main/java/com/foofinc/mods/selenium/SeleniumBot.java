@@ -1,5 +1,9 @@
 package com.foofinc.mods.selenium;
 
+import com.foofinc.mods.selenium.nav_ex.ButtonClickTask;
+import com.foofinc.mods.selenium.nav_ex.NavigationExecutor;
+import com.foofinc.mods.selenium.nav_ex.PressEnterTask;
+import com.foofinc.mods.selenium.nav_ex.WriteInElementTask;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,10 +12,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import selenium.nav_ex.ButtonClickTask;
-import selenium.nav_ex.NavigationExecutor;
-import selenium.nav_ex.PressEnterTask;
-import selenium.nav_ex.WriteInElementTask;
 
 import java.time.Duration;
 import java.util.List;

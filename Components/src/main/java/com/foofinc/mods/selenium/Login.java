@@ -1,12 +1,12 @@
 package com.foofinc.mods.selenium;
 
+
+import com.foofinc.mods.selenium.nav_ex.ButtonClickTask;
+import com.foofinc.mods.selenium.nav_ex.NavigationExecutor;
+import com.foofinc.mods.selenium.nav_ex.WriteInElementTask;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import selenium.nav_ex.ButtonClickTask;
-import selenium.nav_ex.NavigationExecutor;
-import selenium.nav_ex.WriteInElementTask;
-
 
 public class Login {
 
