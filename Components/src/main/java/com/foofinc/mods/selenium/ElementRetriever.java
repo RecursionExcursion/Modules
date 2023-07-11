@@ -47,7 +47,6 @@ public class ElementRetriever {
         throw new NotFoundException("Could not find web element");
     }
 
-
     public WebDriver getDriver() {
         return driver;
     }

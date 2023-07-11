@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.Random;
 
-public class DriverInitializer {
+public class WebDriverInitializer {
 
 
     public static WebDriver initialize(String url) {
